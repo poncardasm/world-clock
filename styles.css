@@ -39,33 +39,58 @@ h1 {
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Unique gradients for each clock card */
+.clock-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.location,
+.time {
+  position: relative;
+  z-index: 1;
+}
+
+/* Unique gradients for each clock card based on flag colors */
 .clock-grid .clock-card:nth-child(1) {
-  background: linear-gradient(135deg, #ffffff 0%, #e8f0ff 100%);
+  /* UTC - World/Globe inspired blue */
+  background: linear-gradient(135deg, #ffffff 0%, #cce5ff 100%);
 }
 
 .clock-grid .clock-card:nth-child(2) {
-  background: linear-gradient(135deg, #ffffff 0%, #e8fff0 100%);
+  /* Finland - Blue and white flag */
+  background: linear-gradient(135deg, #ffffff 0%, #002f6c 15%);
 }
 
 .clock-grid .clock-card:nth-child(3) {
-  background: linear-gradient(135deg, #ffffff 0%, #fff0e8 100%);
+  /* Philippines - Red, blue, white, and yellow */
+  background: linear-gradient(135deg, #ffffff 0%, #fcd116 15%, #ce1126 30%);
 }
 
 .clock-grid .clock-card:nth-child(4) {
-  background: linear-gradient(135deg, #ffffff 0%, #f0e8ff 100%);
+  /* USA - Red, white, and blue */
+  background: linear-gradient(135deg, #ffffff 0%, #3c3b6e 15%, #b22234 30%);
 }
 
 .clock-grid .clock-card:nth-child(5) {
-  background: linear-gradient(135deg, #ffffff 0%, #ffe8f0 100%);
+  /* China - Red and yellow */
+  background: linear-gradient(135deg, #ffffff 0%, #de2910 15%, #ffde00 30%);
 }
 
 .clock-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   background-blend-mode: soft-light;
 }
 
