@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Clock</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>World Clock</h1>
+
+      <div class="clock-grid">
+        <div class="clock-card">
+          <div class="location">🌎 UTC</div>
+          <div id="utc-time" class="time">00:00:00</div>
+        </div>
+
+        <div class="clock-card">
+          <div class="location">🇫🇮 Helsinki, Finland</div>
+          <div id="helsinki-time" class="time">00:00:00</div>
+        </div>
+
+        <div class="clock-card">
+          <div class="location">🇵🇭 Manila, Philippines</div>
+          <div id="manila-time" class="time">00:00:00</div>
+        </div>
+
+        <div class="clock-card">
+          <div class="location">🇺🇸 San Francisco, USA</div>
+          <div id="san-francisco-time" class="time">00:00:00</div>
+        </div>
+
+        <div class="clock-card">
+          <div class="location">🇨🇳 Beijing, China</div>
+          <div id="beijing-time" class="time">00:00:00</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
