@@ -53,32 +53,6 @@ h1 {
   position: static;
 }
 
-/* Unique gradients for each clock card based on flag colors */
-.clock-grid .clock-card:nth-child(1) {
-  /* UTC - World/Globe inspired blue */
-  background: linear-gradient(135deg, #ffffff 0%, #e6f3ff 100%);
-}
-
-.clock-grid .clock-card:nth-child(2) {
-  /* Finland - Blue and white flag */
-  background: linear-gradient(135deg, #ffffff 0%, #e6eeff 100%);
-}
-
-.clock-grid .clock-card:nth-child(3) {
-  /* Philippines - Red and blue */
-  background: linear-gradient(135deg, #ffffff 0%, #fff1f1 100%);
-}
-
-.clock-grid .clock-card:nth-child(4) {
-  /* USA - Red and blue */
-  background: linear-gradient(135deg, #ffffff 0%, #f1f1ff 100%);
-}
-
-.clock-grid .clock-card:nth-child(5) {
-  /* China - Red */
-  background: linear-gradient(135deg, #ffffff 0%, #fff1f1 100%);
-}
-
 .clock-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
@@ -103,7 +77,7 @@ h1 {
 .date {
   font-size: 14px;
   color: #718096;
-  font-family: 'Space Mono', monospace;
+  font-family: 'Inter', sans-serif;
   letter-spacing: 0.5px;
 }
 
