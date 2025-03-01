@@ -94,9 +94,17 @@ h1 {
 .time {
   font-size: 2.5rem;
   font-family: 'Space Mono', monospace;
-  font-weight: 700;
+  font-weight: 300;
   color: #1a202c;
   letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.date {
+  font-size: 14px;
+  color: #718096;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.5px;
 }
 
 @media (max-width: 768px) {
