@@ -30,10 +30,15 @@ function updateClock(timeZone, timeId, dateId, locationId) {
   const hour = timeInZone.getHours();
 
   // Update time
-  document.getElementById(timeId).textContent = timeInZone.toLocaleTimeString(
-    'en-GB',
+  let timeString = timeInZone.toLocaleTimeString(
+    'en-US', // Changed from en-GB to en-US for consistent AM/PM formatting
     getTimeOptions()
   );
+
+  // Convert am/pm to uppercase
+  timeString = timeString.replace(/am|pm/i, (match) => match.toUpperCase());
+
+  document.getElementById(timeId).textContent = timeString;
 
   // Update date
   document.getElementById(dateId).textContent = timeInZone.toLocaleDateString(
