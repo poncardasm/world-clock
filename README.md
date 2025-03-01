@@ -1,5 +1,7 @@
 # World Clock
 
+![World Clock Screenshot](/assets/images/screenshot.png)
+
 A simple, minimalist web app that displays real-time clocks for multiple time zones:
 
 - UTC (Coordinated Universal Time)
@@ -15,7 +17,3 @@ A simple, minimalist web app that displays real-time clocks for multiple time zo
 - 24-hour time format display (HH:MM:SS)
 - Responsive layout that works on all device sizes
 - Lightweight implementation using vanilla JavaScript
-
-## Screenshot
-
-![World Clock Screenshot](screenshot.png)
