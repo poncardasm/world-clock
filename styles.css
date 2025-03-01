@@ -1,3 +1,27 @@
+:root {
+  /* Light theme variables */
+  --bg-color: #f5f7fa;
+  --card-bg: white;
+  --text-primary: #1a202c;
+  --text-secondary: #2d3748;
+  --text-tertiary: #718096;
+  --shadow-color: rgba(0, 0, 0, 0.05);
+  --shadow-color-hover: rgba(0, 0, 0, 0.15);
+  --heading-color: #1a365d;
+}
+
+.dark-theme {
+  /* Dark theme variables */
+  --bg-color: #1a202c;
+  --card-bg: #2d3748;
+  --text-primary: #f7fafc;
+  --text-secondary: #e2e8f0;
+  --text-tertiary: #a0aec0;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --shadow-color-hover: rgba(0, 0, 0, 0.4);
+  --heading-color: #90cdf4;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +30,13 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f5f7fa;
-  color: #333;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -22,9 +47,9 @@ body {
 
 h1 {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   font-weight: 300;
-  color: #1a365d;
+  color: var(--heading-color);
   font-size: 2.5rem;
 }
 
@@ -35,10 +60,10 @@ h1 {
 }
 
 .clock-card {
-  background-color: white;
+  background-color: var(--card-bg);
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 25px var(--shadow-color);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -55,12 +80,12 @@ h1 {
 
 .clock-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 30px var(--shadow-color-hover);
 }
 
 .location {
   font-size: 1.1rem;
-  color: #2d3748;
+  color: var(--text-secondary);
   margin-bottom: 1rem;
   font-weight: 600;
   display: flex;
@@ -78,15 +103,15 @@ h1 {
   font-size: 2.5rem;
   font-family: 'Space Mono', monospace;
   font-weight: 300;
-  color: #1a202c;
+  color: var(--text-primary);
   letter-spacing: 2px;
   margin-bottom: 0.5rem;
 }
 
 .date {
   font-size: 14px;
-  color: #718096;
-  font-family: 'Inter', sans-serif;
+  color: var(--text-tertiary);
+  font-family: 'Space Mono', monospace;
   letter-spacing: 0.5px;
 }
 
