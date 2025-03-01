@@ -17,80 +17,54 @@ function updateClocks() {
     day: 'numeric',
   };
 
-  // Update UTC time and date
-  document.getElementById('utc-time').textContent = now.toLocaleTimeString(
-    'en-GB',
-    {
-      ...timeOptions,
-      timeZone: 'UTC',
-    }
-  );
-  document.getElementById('utc-date').textContent = now.toLocaleDateString(
-    'en-GB',
-    {
-      ...dateOptions,
-      timeZone: 'UTC',
-    }
-  );
+  // Function to determine if it's day or night
+  function isDaytime(hour) {
+    return hour >= 6 && hour < 18; // Day time is between 6 AM and 6 PM
+  }
 
-  // Update Helsinki time and date
-  document.getElementById('helsinki-time').textContent = now.toLocaleTimeString(
-    'en-GB',
-    {
-      ...timeOptions,
-      timeZone: 'Europe/Helsinki',
-    }
-  );
-  document.getElementById('helsinki-date').textContent = now.toLocaleDateString(
-    'en-GB',
-    {
-      ...dateOptions,
-      timeZone: 'Europe/Helsinki',
-    }
-  );
+  // Function to update a single clock
+  function updateClock(timeZone, timeId, dateId, locationId) {
+    const timeInZone = new Date(now.toLocaleString('en-US', { timeZone }));
+    const hour = timeInZone.getHours();
 
-  // Update Manila time and date
-  document.getElementById('manila-time').textContent = now.toLocaleTimeString(
-    'en-GB',
-    {
-      ...timeOptions,
-      timeZone: 'Asia/Manila',
-    }
-  );
-  document.getElementById('manila-date').textContent = now.toLocaleDateString(
-    'en-GB',
-    {
-      ...dateOptions,
-      timeZone: 'Asia/Manila',
-    }
-  );
+    // Update time
+    document.getElementById(timeId).textContent = timeInZone.toLocaleTimeString(
+      'en-GB',
+      timeOptions
+    );
 
-  // Update San Francisco time and date
-  document.getElementById('san-francisco-time').textContent =
-    now.toLocaleTimeString('en-GB', {
-      ...timeOptions,
-      timeZone: 'America/Los_Angeles',
-    });
-  document.getElementById('san-francisco-date').textContent =
-    now.toLocaleDateString('en-GB', {
-      ...dateOptions,
-      timeZone: 'America/Los_Angeles',
-    });
+    // Update date
+    document.getElementById(dateId).textContent = timeInZone.toLocaleDateString(
+      'en-GB',
+      dateOptions
+    );
 
-  // Update Beijing time and date
-  document.getElementById('beijing-time').textContent = now.toLocaleTimeString(
-    'en-GB',
-    {
-      ...timeOptions,
-      timeZone: 'Asia/Shanghai',
-    }
+    // Update day/night indicator
+    const locationElement = document.getElementById(locationId);
+    const dayNightIcon = isDaytime(hour) ? '☀️' : '🌙';
+    locationElement.dataset.daynight = dayNightIcon;
+  }
+
+  // Update all clocks with their respective timezones
+  updateClock('UTC', 'utc-time', 'utc-date', 'utc-location');
+  updateClock(
+    'Europe/Helsinki',
+    'helsinki-time',
+    'helsinki-date',
+    'helsinki-location'
   );
-  document.getElementById('beijing-date').textContent = now.toLocaleDateString(
-    'en-GB',
-    {
-      ...dateOptions,
-      timeZone: 'Asia/Shanghai',
-    }
+  updateClock('Asia/Manila', 'manila-time', 'manila-date', 'manila-location');
+  updateClock(
+    'America/Los_Angeles',
+    'san-francisco-time',
+    'san-francisco-date',
+    'sf-location'
+  );
+  updateClock(
+    'Asia/Shanghai',
+    'beijing-time',
+    'beijing-date',
+    'beijing-location'
   );
 }
 
