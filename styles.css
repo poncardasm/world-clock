@@ -128,11 +128,18 @@ h1 {
 .location {
   font-size: 1.1rem;
   color: var(--text-secondary);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-weight: 600;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.timezone {
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+  margin-bottom: 1rem;
+  font-family: 'Space Mono', monospace;
 }
 
 .location::after {
@@ -152,8 +159,35 @@ h1 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-bottom: 1rem;
+  align-items: center;
 }
 
+.time-input {
+  padding: 0.5rem;
+  border: 1px solid var(--text-tertiary);
+  border-radius: 4px;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  font-family: 'Space Mono', monospace;
+  width: 120px;
+}
+
+.set-time-btn {
+  padding: 0.5rem 1rem;
+  background: var(--heading-color);
+  color: var(--card-bg);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.set-time-btn:hover {
+  opacity: 0.9;
+}
 .date {
   font-size: 14px;
   color: var(--text-tertiary);
@@ -183,4 +217,94 @@ h1 {
   .clock-card {
     padding: 1.25rem 1.5rem;
   }
+}
+
+.city-dropdown {
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 200px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 1em;
+}
+
+.city-dropdown:hover {
+  border-color: #007bff;
+}
+
+.city-dropdown:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.time-comparison {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.comparison-equals {
+  font-size: 2rem;
+  color: var(--text-secondary);
+  margin: 0 1rem;
+}
+
+.time-display {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.time-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  min-width: 280px;
+  box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+.time-card h2 {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.time-input-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.time-difference {
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+  margin: 0 auto 2rem;
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.time-difference::before {
+  content: "ℹ️";
+  font-size: 1.1rem;
+}
+
+.city-select {
+  position: relative;
+  margin: 0;
 }
