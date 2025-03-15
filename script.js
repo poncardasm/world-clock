@@ -74,6 +74,12 @@ function updateClocks() {
     'beijing-date',
     'beijing-location'
   );
+  updateClock(
+    'Europe/Amsterdam',
+    'netherlands-time',
+    'netherlands-date',
+    'netherlands-location'
+  );
 }
 
 // Handle time format toggle
