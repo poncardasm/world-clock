@@ -80,6 +80,12 @@ function updateClocks() {
     'netherlands-date',
     'netherlands-location'
   );
+  updateClock(
+    'Australia/Sydney',
+    'sydney-time',
+    'sydney-date',
+    'sydney-location'
+  );
 }
 
 // Handle time format toggle
