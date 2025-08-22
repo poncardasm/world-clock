@@ -48,7 +48,7 @@ function updateClock(timeZone, timeId, dateId, locationId) {
 
   // Update day/night indicator
   const locationElement = document.getElementById(locationId);
-  const dayNightIcon = isDaytime(hour) ? '☀️' : '🌙';
+  const dayNightIcon = isDaytime(hour) ? '🌞' : '🌚';
   locationElement.dataset.daynight = dayNightIcon;
 }
 
